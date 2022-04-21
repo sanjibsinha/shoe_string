@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 class NewTransaction extends StatefulWidget {
@@ -67,9 +68,6 @@ class _NewTransactionState extends State<NewTransaction> {
               decoration: const InputDecoration(labelText: 'Title'),
               controller: _titleController,
               onSubmitted: (_) => _submitData(),
-              // onChanged: (val) {
-              //   titleInput = val;
-              // },
             ),
             TextField(
               decoration: const InputDecoration(labelText: 'Amount'),
@@ -93,10 +91,17 @@ class _NewTransactionState extends State<NewTransaction> {
                   TextButton(
                     child: Text(
                       'Choose Date',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).primaryColor,
+                      style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
+                    ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.purple),
+                      elevation: MaterialStateProperty.all(20),
                     ),
                     onPressed: _presentDatePicker,
                   ),
@@ -106,10 +111,17 @@ class _NewTransactionState extends State<NewTransaction> {
             TextButton(
               child: Text(
                 'Add Transaction',
-                style: TextStyle(
-                  backgroundColor: Theme.of(context).primaryColor,
-                  color: Theme.of(context).textTheme.button!.color,
+                style: GoogleFonts.lato(
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
+              ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.purple),
+                elevation: MaterialStateProperty.all(20),
               ),
               onPressed: _submitData,
             ),

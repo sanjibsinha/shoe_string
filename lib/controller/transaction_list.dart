@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
-import '../models/transaction.dart';
+import '../model/transaction.dart';
 
 class TransactionList extends StatelessWidget {
-  final List<Transaction> transactions;
+  final List<Transaction> yourTransactions;
 
   TransactionList(
-    this.transactions,
+    this.yourTransactions,
   );
 
   @override
@@ -15,12 +16,18 @@ class TransactionList extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(5.0),
       height: 300,
-      child: transactions.isEmpty
+      child: yourTransactions.isEmpty
           ? Column(
               children: <Widget>[
                 Text(
-                  'No transactions added yet!',
-                  style: Theme.of(context).textTheme.headline6,
+                  'You\'ve not added any transaction.',
+                  style: GoogleFonts.lato(
+                    textStyle: const TextStyle(
+                      color: Colors.purple,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   height: 20,
@@ -34,7 +41,7 @@ class TransactionList extends StatelessWidget {
               ],
             )
           : ListView.builder(
-              itemBuilder: (ctx, index) {
+              itemBuilder: (context, index) {
                 return Card(
                   elevation: 5,
                   margin: const EdgeInsets.symmetric(
@@ -47,21 +54,21 @@ class TransactionList extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(6),
                         child: FittedBox(
-                          child: Text('\$${transactions[index].amount}'),
+                          child: Text('\$${yourTransactions[index].amount}'),
                         ),
                       ),
                     ),
                     title: Text(
-                      transactions[index].title,
+                      yourTransactions[index].title,
                       style: Theme.of(context).textTheme.headline6,
                     ),
                     subtitle: Text(
-                      DateFormat.yMMMd().format(transactions[index].date),
+                      DateFormat.yMMMd().format(yourTransactions[index].date),
                     ),
                   ),
                 );
               },
-              itemCount: transactions.length,
+              itemCount: yourTransactions.length,
             ),
     );
   }
