@@ -1,4 +1,9 @@
-# shoe_string
+# The ShoeString is a personal expense checker Flutter App
+
+You can learn to build this app step-by-step. However, you need to 
+follow the branches.
+
+- [Lab: For more flutter articles and app building tutorials please visit](https://sanjibsinha.com)
 
 A new Flutter project.
 
