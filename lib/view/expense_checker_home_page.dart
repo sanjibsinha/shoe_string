@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../controller/chart.dart';
 import '../controller/new_transaction.dart';
-import '../controller/transaction_list.dart';
 import '../model/transaction.dart';
 
 class ExpenseCheckerHomePage extends StatefulWidget {
@@ -77,8 +75,8 @@ class _ExpenseCheckerHomePageState extends State<ExpenseCheckerHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Chart(_latestTransactions),
-            TransactionList(_transactionList),
+            //Chart(_latestTransactions),
+            //TransactionList(_transactionList),
           ],
         ),
       ),
