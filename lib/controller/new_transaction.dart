@@ -3,10 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 class NewTransaction extends StatefulWidget {
-  final Function addTx;
+  final Function addTransaction;
 
   NewTransaction(
-    this.addTx,
+    this.addTransaction,
   );
 
   @override
@@ -29,7 +29,7 @@ class _NewTransactionState extends State<NewTransaction> {
       return;
     }
 
-    widget.addTx(
+    widget.addTransaction(
       enteredTitle,
       enteredAmount,
       _selectedDate,
@@ -73,7 +73,6 @@ class _NewTransactionState extends State<NewTransaction> {
               controller: _amountController,
               keyboardType: TextInputType.number,
               onSubmitted: (_) => _submitData(),
-              // onChanged: (val) => amountInput = val,
             ),
             Container(
               padding: const EdgeInsets.all(8.0),

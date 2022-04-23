@@ -49,12 +49,16 @@ class TransactionList extends StatelessWidget {
                     horizontal: 5,
                   ),
                   child: ListTile(
-                    leading: CircleAvatar(
-                      radius: 30,
-                      child: Padding(
-                        padding: const EdgeInsets.all(6),
-                        child: FittedBox(
-                          child: Text('\$${yourTransactions[index].amount}'),
+                    leading: Container(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        '\$${yourTransactions[index].amount}',
+                        style: GoogleFonts.lato(
+                          textStyle: const TextStyle(
+                            color: Colors.deepOrange,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20.0,
+                          ),
                         ),
                       ),
                     ),
